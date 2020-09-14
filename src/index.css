@@ -23,10 +23,10 @@ code {
   min-height: 50px;
 }
 .m{
-  background:url('/m.png');
+  background:url('/mario-game/m.png');
   background-repeat:no-repeat;
 }
 .rio{
-  background:url('/rio.png') 5px;
+  background:url('/mario-game/rio.png') 5px;
   background-repeat:no-repeat;
 }

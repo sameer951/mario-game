@@ -53,10 +53,11 @@ export const BoardComponet = (props) => {
 
     //onMount
     useEffect(() => {
-        let pos = '' + +(-1 + props.row / 2) + +(-1 + props.column / 2);
+        let pos = '' + +(-1 + Math.floor(props.row / 2)) + +(-1 + Math.floor(props.column / 2));
         let value = { ...state, marioPos: pos };
         setState(value);
-    }, []);
+        // alert(value)
+    }, [props.row,props.column]);
     useEffect(() => {
         if (!state.mushroomList.length) {
             alert('You Finished All By Steps: ' + count);
