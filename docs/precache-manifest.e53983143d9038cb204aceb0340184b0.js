@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "32dba3706b7b0cab1a0a91c1475b3d1e",
+    "revision": "f280fa4f3719889855b661ced37059cb",
     "url": "/mario-game/index.html"
   },
   {
-    "revision": "3a1531db790914a83b09",
+    "revision": "bcb58aff03fcb40cfaf3",
     "url": "/mario-game/static/css/main.83cb960e.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/mario-game/static/js/2.c3451aa3.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "3a1531db790914a83b09",
-    "url": "/mario-game/static/js/main.1fd43575.chunk.js"
+    "revision": "bcb58aff03fcb40cfaf3",
+    "url": "/mario-game/static/js/main.ae9b5363.chunk.js"
   },
   {
     "revision": "e036e0019c171adbec6d",

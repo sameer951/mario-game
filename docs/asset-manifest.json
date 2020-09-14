@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/mario-game/static/css/main.83cb960e.chunk.css",
-    "main.js": "/mario-game/static/js/main.1fd43575.chunk.js",
-    "main.js.map": "/mario-game/static/js/main.1fd43575.chunk.js.map",
+    "main.js": "/mario-game/static/js/main.ae9b5363.chunk.js",
+    "main.js.map": "/mario-game/static/js/main.ae9b5363.chunk.js.map",
     "runtime-main.js": "/mario-game/static/js/runtime-main.985d8748.js",
     "runtime-main.js.map": "/mario-game/static/js/runtime-main.985d8748.js.map",
     "static/js/2.c3451aa3.chunk.js": "/mario-game/static/js/2.c3451aa3.chunk.js",
     "static/js/2.c3451aa3.chunk.js.map": "/mario-game/static/js/2.c3451aa3.chunk.js.map",
     "index.html": "/mario-game/index.html",
-    "precache-manifest.73436b1aa544fb21247e470f085133bc.js": "/mario-game/precache-manifest.73436b1aa544fb21247e470f085133bc.js",
+    "precache-manifest.e53983143d9038cb204aceb0340184b0.js": "/mario-game/precache-manifest.e53983143d9038cb204aceb0340184b0.js",
     "service-worker.js": "/mario-game/service-worker.js",
     "static/css/main.83cb960e.chunk.css.map": "/mario-game/static/css/main.83cb960e.chunk.css.map",
     "static/js/2.c3451aa3.chunk.js.LICENSE.txt": "/mario-game/static/js/2.c3451aa3.chunk.js.LICENSE.txt"
@@ -17,6 +17,6 @@
     "static/js/runtime-main.985d8748.js",
     "static/js/2.c3451aa3.chunk.js",
     "static/css/main.83cb960e.chunk.css",
-    "static/js/main.1fd43575.chunk.js"
+    "static/js/main.ae9b5363.chunk.js"
   ]
 }
