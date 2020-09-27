@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/mario-game/static/css/main.83cb960e.chunk.css",
-    "main.js": "/mario-game/static/js/main.ae9b5363.chunk.js",
-    "main.js.map": "/mario-game/static/js/main.ae9b5363.chunk.js.map",
+    "main.css": "/mario-game/static/css/main.0bb2bbc4.chunk.css",
+    "main.js": "/mario-game/static/js/main.cdcd0ed3.chunk.js",
+    "main.js.map": "/mario-game/static/js/main.cdcd0ed3.chunk.js.map",
     "runtime-main.js": "/mario-game/static/js/runtime-main.985d8748.js",
     "runtime-main.js.map": "/mario-game/static/js/runtime-main.985d8748.js.map",
-    "static/js/2.c3451aa3.chunk.js": "/mario-game/static/js/2.c3451aa3.chunk.js",
-    "static/js/2.c3451aa3.chunk.js.map": "/mario-game/static/js/2.c3451aa3.chunk.js.map",
+    "static/js/2.093a21d6.chunk.js": "/mario-game/static/js/2.093a21d6.chunk.js",
+    "static/js/2.093a21d6.chunk.js.map": "/mario-game/static/js/2.093a21d6.chunk.js.map",
     "index.html": "/mario-game/index.html",
-    "precache-manifest.e53983143d9038cb204aceb0340184b0.js": "/mario-game/precache-manifest.e53983143d9038cb204aceb0340184b0.js",
+    "precache-manifest.e3fe2b5fb9c2d577004cf808db28ef07.js": "/mario-game/precache-manifest.e3fe2b5fb9c2d577004cf808db28ef07.js",
     "service-worker.js": "/mario-game/service-worker.js",
-    "static/css/main.83cb960e.chunk.css.map": "/mario-game/static/css/main.83cb960e.chunk.css.map",
-    "static/js/2.c3451aa3.chunk.js.LICENSE.txt": "/mario-game/static/js/2.c3451aa3.chunk.js.LICENSE.txt"
+    "static/css/main.0bb2bbc4.chunk.css.map": "/mario-game/static/css/main.0bb2bbc4.chunk.css.map",
+    "static/js/2.093a21d6.chunk.js.LICENSE.txt": "/mario-game/static/js/2.093a21d6.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.985d8748.js",
-    "static/js/2.c3451aa3.chunk.js",
-    "static/css/main.83cb960e.chunk.css",
-    "static/js/main.ae9b5363.chunk.js"
+    "static/js/2.093a21d6.chunk.js",
+    "static/css/main.0bb2bbc4.chunk.css",
+    "static/js/main.cdcd0ed3.chunk.js"
   ]
 }

@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/mario-game/precache-manifest.e53983143d9038cb204aceb0340184b0.js"
+  "/mario-game/precache-manifest.e3fe2b5fb9c2d577004cf808db28ef07.js"
 );
 
 self.addEventListener('message', (event) => {
