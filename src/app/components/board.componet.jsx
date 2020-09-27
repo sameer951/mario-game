@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react"
+import React, { useEffect, useRef, useState } from "react"
 import { BoardPosition } from "./board-position.component";
 
 const throttling = (() => {
@@ -14,11 +14,12 @@ const throttling = (() => {
 export const BoardComponet = (props) => {
 
     // "61", "64", "66", "69", "72", "80", 
-    const msrList = ["05", "10", "19", "21", "34", "42", "47","85", "93", "98"];
+    const msrList = ["05", "10", "19", "21", "34", "42", "47", "85", "93", "98"];
     const [state, setState] = useState({ marioPos: '06', mushroomList: msrList });
     const [willAdd, setWillAdd] = useState(false);
-    const [count, setCount] = useState(-1);
-
+    // const [count, setCount] = useState(-1);
+    const countNo = useRef(0);
+    let count = countNo.current;
     const downHandler = (e) => {
         let i = state.marioPos.charAt(0),
             j = state.marioPos.charAt(1);
@@ -33,7 +34,7 @@ export const BoardComponet = (props) => {
                 let mushroomList = state.mushroomList.filter((mushroom) => mushroom != pos);
                 let value = { ...state, marioPos: pos, mushroomList };
                 setState(value);
-            }, 200);
+            }, 50);
 
         } else if (e.key === 'e' || e.key === 'E') {
             setWillAdd(true);
@@ -56,16 +57,18 @@ export const BoardComponet = (props) => {
         let pos = '' + +(-1 + Math.floor(props.row / 2)) + +(-1 + Math.floor(props.column / 2));
         let value = { ...state, marioPos: pos };
         setState(value);
+        countNo.current = 1;
         // alert(value)
-    }, [props.row,props.column]);
+    }, [props.row, props.column]);
     useEffect(() => {
         if (!state.mushroomList.length) {
             alert('You Finished All By Steps: ' + count);
         } else {
-            setCount(c => c + 1);
+            countNo.current = count + 1;
+            // setCount(c => c + 1);
         }
 
-    }, [state])
+    }, [state.marioPos])
 
     const addMushroom = (id) => {
         if (willAdd && !state.mushroomList.includes(id)) {
@@ -86,8 +89,19 @@ export const BoardComponet = (props) => {
         }
         rowList.push(<div className="box-row" key={i + 'row'}>{columnList}</div>);
     }
+    const clickHandler = (type) => {
+        let e = { key: type }
+        downHandler(e);
+    }
     return (<React.Fragment>
         {rowList}
+        <div >
+            <div className="float-right">Steps Moved=&gt; {!state.mushroomList.length && count ? count : count ? count - 1 : 0}</div>
+            &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;<div className="btn btn-primary" onClick={() => clickHandler('ArrowUp')}><i className="arrow up"></i></div><br /><br />
+            <div className="btn btn-primary" onClick={() => clickHandler('ArrowLeft')}><i className="arrow left"></i></div> &nbsp;&nbsp;
+            <div className="btn btn-primary" onClick={() => clickHandler('ArrowRight')}><i className="arrow right"></i></div><br /><br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div className="btn btn-primary" onClick={() => clickHandler('ArrowDown')}><i className="arrow down"></i></div>
+        </div>
     </React.Fragment>);
 
 }
