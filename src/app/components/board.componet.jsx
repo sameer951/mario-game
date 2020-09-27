@@ -11,6 +11,9 @@ const throttling = (() => {
         }
     }
 })();
+function getRandomArbitrary(min, max) {
+    return Math.random() * (max - min) + min;
+}
 export const BoardComponet = (props) => {
 
     // "61", "64", "66", "69", "72", "80", 
@@ -44,6 +47,26 @@ export const BoardComponet = (props) => {
 
         // console.log(e);
     }
+    const newGame = () => {
+        setTimeout(() => {
+            let mList = [];
+            let shouldNo = (parseInt(props.row) + parseInt(props.column)) / 2;
+            let pos = '' + +(-1 + Math.floor(props.row / 2)) + +(-1 + Math.floor(props.column / 2));
+            do {
+                let newR = parseInt(getRandomArbitrary(0, props.row));
+                let newC = parseInt(getRandomArbitrary(0, props.column));
+                let newPos = '' + newR + newC;
+                if (!mList.includes(newPos) && pos != newPos) {
+                    mList.push(newPos);
+                    // console.log(mList);
+                    if (mList.length == shouldNo) {
+                        countNo.current = 1;
+                        setState({ ...state, marioPos: pos, mushroomList: mList });
+                    };
+                }
+            } while (mList.length < shouldNo);
+        }, 0)
+    }
 
     useEffect(() => {
         window.addEventListener("keydown", downHandler);
@@ -54,15 +77,11 @@ export const BoardComponet = (props) => {
 
     //onMount
     useEffect(() => {
-        let pos = '' + +(-1 + Math.floor(props.row / 2)) + +(-1 + Math.floor(props.column / 2));
-        let value = { ...state, marioPos: pos };
-        setState(value);
-        countNo.current = 1;
-        // alert(value)
+        newGame();
     }, [props.row, props.column]);
     useEffect(() => {
         if (!state.mushroomList.length) {
-            alert('You Finished All By Steps: ' + count);
+            // alert('You Finished All By Steps: ' + countNo.current - 1);
         } else {
             countNo.current = count + 1;
             // setCount(c => c + 1);
@@ -96,11 +115,14 @@ export const BoardComponet = (props) => {
     return (<React.Fragment>
         {rowList}
         <div >
-            <div className="float-right">Steps Moved=&gt; {!state.mushroomList.length && count ? count : count ? count - 1 : 0}</div>
+            {/* !state.mushroomList.length && count ? count : */}
+            <div className="float-right">Steps Moved=&gt; {count ? count - 1 : 0}</div>
             &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;<div className="btn btn-primary" onClick={() => clickHandler('ArrowUp')}><i className="arrow up"></i></div><br /><br />
+            <div className="float-right p-2">{!state.mushroomList.length ? `Game Over With ${count - 1} steps` : ''}</div>
+            <div className="float-right btn btn-danger" onClick={() => newGame()}>Start New Game</div>
             <div className="btn btn-primary" onClick={() => clickHandler('ArrowLeft')}><i className="arrow left"></i></div> &nbsp;&nbsp;
             <div className="btn btn-primary" onClick={() => clickHandler('ArrowRight')}><i className="arrow right"></i></div><br /><br />
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div className="btn btn-primary" onClick={() => clickHandler('ArrowDown')}><i className="arrow down"></i></div>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div className="btn btn-primary" onClick={() => clickHandler('ArrowDown')}><i className="arrow down"></i></div> <br />
         </div>
     </React.Fragment>);
 
